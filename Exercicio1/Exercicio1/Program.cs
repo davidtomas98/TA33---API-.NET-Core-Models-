@@ -9,7 +9,7 @@ builder.Services.AddEndpointsApiExplorer(); // Agrega la exploración de API de p
 builder.Services.AddSwaggerGen(); // Agrega Swagger para generar documentación de la API
 
 // Configura la base de datos
-builder.Services.AddDbContext<AppDbContext>(); // Agrega el contexto de la base de datos
+builder.Services.AddDbContext<APIContext>(); // Agrega el contexto de la base de datos
 
 var app = builder.Build();
 

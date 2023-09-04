@@ -1,30 +1,31 @@
-﻿using Exercicio3.Models; // Importa las clases de modelos
+﻿using Exercicio1.Models; // Importa las clases de modelos
 using Microsoft.EntityFrameworkCore;
 
-namespace Exercicio3.Data
+namespace Exercicio1.Data
 {
-    public class AppDbContext : DbContext
+    public class APIContext : DbContext
     {
         private readonly IConfiguration configuration;
 
         // Constructor que recibe opciones de contexto y configuración
-        public AppDbContext(DbContextOptions<AppDbContext> options, IConfiguration configuration)
+        public APIContext(DbContextOptions<APIContext> options, IConfiguration configuration)
             : base(options)
         {
             this.configuration = configuration;
         }
 
         // DbSet para las entidades Articulo y Fabricante
-        public DbSet<Almacen> Almacenes { get; set; }
-        public DbSet<Caja> Cajas { get; set; }
+        public DbSet<Articulo> Articulos { get; set; }
+        public DbSet<Fabricante> Fabricantes { get; set; }
 
         // Método para configurar relaciones y restricciones en el modelo
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Almacen>()
-                .HasMany(a => a.Cajas)
-                .WithOne(c => c.Almacen)
-                .HasForeignKey(c => c.AlmacenCodigo);
+            // Configura la relación uno a muchos entre Articulo y Fabricante
+            modelBuilder.Entity<Articulo>()
+                .HasOne(a => a.Fabricante)
+                .WithMany(f => f.Articulos)
+                .HasForeignKey(a => a.FabricanteCodigo);
         }
 
         // Método para configurar opciones de conexión a la base de datos

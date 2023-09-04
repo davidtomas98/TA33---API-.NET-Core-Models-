@@ -1,16 +1,17 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Exercicio1",
     "\\Exercicio1\\Exercicio1",
-    "\\Exercicio1\\Exercicio1\\Properties",
+    "\\Exercicio1\\Exercicio1\\Data",
+    "\\Exercicio2\\Exercicio2",
+    "\\Exercicio2\\Exercicio2\\Data",
     "\\Exercicio3\\Exercicio3",
     "\\Exercicio3\\Exercicio3\\Data",
-    "\\Exercicio3\\Exercicio3\\Models",
-    "\\Exercicio3\\Exercicio3\\Properties",
-    "\\Exercicio4",
     "\\Exercicio4\\Exercicio4",
+    "\\Exercicio4\\Exercicio4\\Data",
     "\\Exercicio4\\Exercicio4\\Models"
   ],
-  "SelectedNode": "\\Exercicio4\\Exercicio4\\Program.cs",
+  "SelectedNode": "\\Exercicio1\\Exercicio1\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
